@@ -1,0 +1,281 @@
+/**
+ * Material UI Client Template - CSS Variables and Utilities
+ * Based on the complete design system specifications
+ */
+
+:root {
+  /* Primary Colors */
+  --primary-main: #E91E63;
+  --primary-light: #F8BBD0;
+  --primary-dark: #C2185B;
+  --primary-contrast: #FFFFFF;
+
+  /* Background Colors */
+  --bg-default: #FAFAFA;
+  --bg-paper: #FFFFFF;
+  --bg-header: #E91E63;
+  --bg-active: #FCE4EC;
+  --bg-hover: #F5F5F5;
+
+  /* Text Colors */
+  --text-primary: #424242;
+  --text-secondary: #757575;
+  --text-disabled: #BDBDBD;
+  --text-breadcrumb: #E91E63;
+
+  /* Semantic Colors */
+  --error-main: #F44336;
+  --info-main: #2196F3;
+  --warning-main: #FF9800;
+  --success-main: #4CAF50;
+
+  /* Border & Divider */
+  --divider: #E0E0E0;
+  --border-radius: 4px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Dimensions */
+  --header-height: 64px;
+  --icon-size: 24px;
+  --avatar-size: 40px;
+
+  /* Typography */
+  --font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-family-mono: 'Roboto Mono', 'Courier New', monospace;
+}
+
+/* Header Bar Styles */
+.client-header {
+  height: var(--header-height);
+  background-color: var(--bg-header);
+  color: var(--primary-contrast);
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+              0px 2px 2px 0px rgba(0,0,0,0.14),
+              0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.client-header-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+  color: var(--primary-contrast);
+}
+
+.client-header-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--primary-contrast);
+  margin-right: var(--spacing-md);
+}
+
+/* Main Content Styles */
+.client-main-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+  background-color: var(--bg-default);
+  overflow-y: auto;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.client-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* Card Styles */
+.client-card {
+  background-color: var(--bg-paper);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+              0px 1px 1px 0px rgba(0,0,0,0.14),
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.client-card-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+  color: #212121;
+  margin-bottom: var(--spacing-md);
+}
+
+.client-card-body {
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Button Styles */
+.client-button {
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 36px;
+}
+
+.client-button-primary {
+  background-color: var(--primary-main);
+  color: var(--primary-contrast);
+}
+
+.client-button-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.client-button-secondary {
+  background-color: transparent;
+  color: var(--primary-main);
+  border: 1px solid var(--primary-main);
+}
+
+.client-button-secondary:hover {
+  background-color: var(--bg-active);
+}
+
+/* Form Styles */
+.client-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.client-form-field {
+  margin-bottom: var(--spacing-md);
+}
+
+.client-input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--divider);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-family: var(--font-family);
+  transition: border-color 0.2s;
+}
+
+.client-input:focus {
+  outline: none;
+  border-color: var(--primary-main);
+}
+
+.client-label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Navigation Styles (if used) */
+.client-menu-item {
+  height: 48px;
+  padding: 12px var(--spacing-md);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.client-menu-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.client-menu-item.active {
+  background-color: var(--bg-active);
+  color: var(--primary-main);
+  font-weight: 500;
+}
+
+.client-menu-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-right: var(--spacing-md);
+  color: inherit;
+}
+
+/* Avatar Styles */
+.client-avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  background-color: var(--primary-main);
+  color: var(--primary-contrast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Utility Classes */
+.client-spacing-xs { margin: var(--spacing-xs); }
+.client-spacing-sm { margin: var(--spacing-sm); }
+.client-spacing-md { margin: var(--spacing-md); }
+.client-spacing-lg { margin: var(--spacing-lg); }
+.client-spacing-xl { margin: var(--spacing-xl); }
+
+.client-padding-xs { padding: var(--spacing-xs); }
+.client-padding-sm { padding: var(--spacing-sm); }
+.client-padding-md { padding: var(--spacing-md); }
+.client-padding-lg { padding: var(--spacing-lg); }
+.client-padding-xl { padding: var(--spacing-xl); }
+
+/* Typography Utilities */
+.client-text-primary { color: var(--text-primary); }
+.client-text-secondary { color: var(--text-secondary); }
+.client-text-disabled { color: var(--text-disabled); }
+
+.client-font-weight-light { font-weight: 300; }
+.client-font-weight-regular { font-weight: 400; }
+.client-font-weight-medium { font-weight: 500; }
+.client-font-weight-bold { font-weight: 700; }
+
+/* Layout Utilities */
+.client-flex { display: flex; }
+.client-flex-column { flex-direction: column; }
+.client-flex-between { justify-content: space-between; }
+.client-flex-center { align-items: center; }
+.client-flex-grow { flex-grow: 1; }
+
+/* Responsive Utilities */
+@media (max-width: 600px) {
+  .client-container {
+    padding: var(--spacing-md);
+  }
+  
+  .client-card {
+    padding: var(--spacing-md);
+  }
+  
+  .client-main-content {
+    padding: var(--spacing-md);
+  }
+}
+

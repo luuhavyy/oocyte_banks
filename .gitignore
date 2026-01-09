@@ -1,0 +1,45 @@
+# Root level gitignore for monorepo
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Environment variables (DO NOT COMMIT)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Credentials (CRITICAL - DO NOT COMMIT)
+**/serviceAccount.json
+**/serviceAccountKey.json
+**/*-firebase-adminsdk-*.json
+**/credentials.json
+*.pem
+*.key
+
