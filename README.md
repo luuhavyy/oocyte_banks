@@ -1,12 +1,12 @@
 # Oocyte Bank Management System
 
-This is the source code for my thesis project: "An AI-Based System for Oocyte Banks: Post-Retrieval Oocyte Eligibility Decision Support for Donors and Recipients". The system facilitates the management of oocyte donation and retrieval processes and includes machine learning capabilities for automated oocyte evaluation and classification.
+This is the source code for my thesis project: "An AI-Based System for Oocyte Banks: Post-Retrieval Oocyte Eligibility Decision Support for Donors and Recipients". The system facilitates the management of oocyte donation and retrieval processes and includes AI model capabilities for automated oocyte evaluation and classification.
 
 ## Overview
 
 The Oocyte Bank Management System is a web-based application designed to support oocyte bank operations. It provides separate interfaces for patients (donors and recipients) and administrative staff, enabling efficient management of patient records, appointments, oocyte retrieval batches, and automated evaluation of oocyte images using computer vision.
 
-The system processes microscopic images of oocytes and uses a trained machine learning model to detect and classify oocytes based on their maturity stage and quality. This automated evaluation helps staff make informed decisions about oocyte viability and storage eligibility.
+The system processes microscopic images of oocytes and uses a trained AI model to detect and classify oocytes based on their maturity stage. This automated evaluation helps staff make informed decisions about oocyte eligibility and storage.
 
 ## How It Works
 
@@ -14,9 +14,9 @@ The system operates through a three-tier architecture:
 
 1. **Image Upload and Batch Creation**: Staff members upload microscopic images of oocytes during retrieval procedures. These images are organized into batches associated with specific patients and retrieval sessions.
 
-2. **Automated Evaluation**: Once a batch is created, staff can initiate an evaluation process. The system processes each image using a machine learning model (Detectron2) that detects oocytes in the images and classifies them based on maturity stages (MII, MI) and quality indicators (normal, abnormal).
+2. **Automated Evaluation**: Once a batch is created, staff can initiate an evaluation process. The system processes each image using an AI model (Detectron2) that detects oocytes in the images and classifies them based on maturity stages: MII (Metaphase II - likely reproducible oocyte) and MI (Metaphase I - unlikely reproducible oocyte).
 
-3. **Results and Management**: Evaluation results are stored and displayed to both patients and staff. Patients can view their oocyte records and journey progress, while staff can manage all aspects of the process including patient records, appointments, and batch evaluations.
+3. **Results and Management**: Evaluation results are stored and displayed to staff for review and approval. Once staff approve the results, they become visible to patients. Patients can view their approved oocyte records and journey progress, while staff can manage all aspects of the process including patient records, appointments, batch evaluations, and result approval.
 
 The evaluation process runs asynchronously using Celery, allowing the system to handle multiple batches simultaneously without blocking the main application.
 
@@ -29,7 +29,7 @@ The backend is built with FastAPI (Python) and handles all server-side logic, AP
 - RESTful API endpoints for patient management, appointments, batch processing, and evaluations
 - Firebase integration for authentication and database operations
 - Celery workers for asynchronous image processing tasks
-- Machine learning inference service using Detectron2
+- AI model inference service using Detectron2
 - JWT-based authentication system
 
 ### FE_client (Client Frontend)
@@ -63,7 +63,6 @@ To clone this repository, run:
 
 ```
 git clone <repository-url>
-cd egg-bank
 ```
 
 ## Setting Up the Backend
@@ -181,7 +180,8 @@ All services should be running simultaneously for the system to function properl
 
 ## Notes
 
-- Ensure that the machine learning model file (`model_final.pth`) is present in `BE/app/models/` before running evaluations.
+- Ensure that the AI model file (`model_final.pth`) is present in `BE/app/models/` before running evaluations.
+- Staff must approve evaluation results before they are visible to patients in the client interface.
 - The storage directory (`BE/storage`) will be created automatically for storing uploaded images.
 - Make sure Firebase Firestore database is properly configured and accessible with the provided service account credentials.
 - For production deployment, update CORS origins in the backend configuration and use appropriate environment variables.
